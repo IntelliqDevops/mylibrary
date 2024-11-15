@@ -13,7 +13,7 @@ def deployTomcat(jobname,ipaddress,context)
    sh "scp /var/lib/jenkins/workspace/${jobname}/webapp/target/webapp.war ubuntu@${ipaddress}:/var/lib/tomcat10/webapps/${context}.war"
 }
 
-runSelenium(jobname)
+def runSelenium(jobname)
 {
    sh "java -jar /var/lib/jenkins/workspace/${jobname}/testing.jar"
 }
